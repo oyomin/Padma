@@ -4,28 +4,37 @@ html, body {
     font-family: 'Consolas';
 }
 
-header {
-    background-color: #ffffff;
-    padding: 10px;
+h1 {
+    text-align: center;
+    color: #3C3333;
+    font-size: 50px;
+    margin: 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.20);
+
 }
 
-.logo {
-    width: 80px;
-    height: auto;
+.logo-text {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
 }
 
 .nav-bar {
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    list-style-type: none;
-    display: inline-block;
     padding: 10px;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
 }
 
 .item {
@@ -33,3 +42,90 @@ li {
     color: #3C3333;
     font-size: 20px;
 }
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-bar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        background-color: white;
+        padding: 20px;
+        margin: 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .nav-bar.active {
+        display: flex;
+    }
+}
+
+main {
+    background: linear-gradient(120deg, #fec3ca
+    , #ffdbe0
+    , #c6d998
+    , #d6e8b5
+    , #ffffff);
+    min-height: 100vh;
+    max-height: 100%;
+    background-size: 300% 300%;
+    animation: gradientMove 20s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+footer {
+    min-height: auto;
+    max-height: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.footer-text {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo-footer {
+    display: flex;
+    align-items: left;
+    width: 60px;
+    height: auto;
+}
+
+.company-name {
+    padding-top: 15px;
+    width: fit-content;
+    font-size: 20px;
+    color: #3C3333;
+    font-size: 20px;
+}       
